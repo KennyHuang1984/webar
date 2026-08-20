@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    與
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple WebAR Example</title>
+    <!-- 引入 Google model-viewer 套件 -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; width: 100vw; height: 100vh; }
+        model-viewer { width: 100%; height: 100%; background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+
+    <!-- 建立 model-viewer 元件 -->
+    <model-viewer 
+        src="office_chair.glb" 
+        ios-src="Office_Chair.usdz" 
+        alt="A office_chair model" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        auto-rotate>
+        
+        <!-- 這會自帶一個漂亮的「在您的空間中檢視 (View in your space)」按鈕 -->
+        <button slot="ar-button" style="background: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; left: 16px; padding: 12px 16px; font-weight: bold;">
+            點擊開始 AR 放置
+        </button>
+    </model-viewer>
+
+</body>
+</html>
